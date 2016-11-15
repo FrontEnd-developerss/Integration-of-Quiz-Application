@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+#submit_form {
+	margin-right: 10px;
+	margin-bottom: 30px;
+}
+#valid {
+	color:red;
+	display:none;
+}
+#pass_valid {
+	color:red;
+	display:none;
+}
+li {
+	text-align: center;
+}
+#valid1 {
+	color:red;
+	display:none;
+}
+#sign_out,#session {
+	display: inline;
+	font-size: large;
+}
+#navigation {
+	float:left;
+}
+#content {
+	float:left;
+	margin-left: 20px;
+}
+#start {
+	color:white;
+	background-color: darkblue;
+}
+#contain {
+	background-color: white;
+	box-shadow: 0 0 20px 5px black;
+}
+body {
+	background-color: lightgrey;
+	font-family: 'Righteous', cursive;
+}
+a {
+	color:black;
+}
+.btn {
+	font-size: large;
+}
+.space {
+	margin-bottom:20px;
+}
+#space {
+	margin-top:10px;
+}
+#radio_toggle{
+	display: none;
+}
+#radio_toggle1{
+	display: none;
+}
+.toggle_subject{
+	display:none;
+}
+.toggle_subject_student {
+	display:none;
+}

@@ -1,2 +1,1 @@
-# Integration-of-Quiz-Application
-A quiz application using jquery..........
+# 11-14-2016
