@@ -21,7 +21,7 @@
 		</div>
 		<div class="container" id="contain">
     <div class="container text-right">
-      <h3 id="session"></h3>&emsp;<a href="practise.html" id="sign_out" data-toggle="tooltip" title="Exit Quiz"> Sign out</a>
+      <h3 id="session"></h3>&emsp;<a href="login.html" id="sign_out" data-toggle="tooltip" title="Exit Quiz"> Sign out</a>
       </div>
   <ul class="nav nav-pills nav-stacked" id="navigation">
     <li class="active" ><a data-toggle="tab" href="#home" class="btn">Profile Info</a></li>
@@ -104,19 +104,50 @@
 				<center>
 					<h2>QUESTION CORNER</h2>
 				</center>
-				<p id="demo">10</p>
-				<ul class="nav nav-pills mainquiz">
-					<li class="active"><a data-toggle="pill" href="#MATHS">MATHS</a></li>
-					<li><a data-toggle="pill" href="#SCIENCE">SCIENCE</a></li>
-					<li><a data-toggle="pill" href="#SOCIAL">SOCIAL</a></li>
+				<nav class="nav navbar">
+				<ul class="nav nav-pills mainquiz col-xs-10">
+					<li  class="active"><a data-toggle="pill" href="#INSTRUCTIONS">:D</a></li>
+					<li id="math-timer"><a data-toggle="pill" href="#MATHS">MATHS</a></li>
+					<li id="science-timer"><a data-toggle="pill" href="#SCIENCE">SCIENCE</a></li>
+					<li id="social-timer"><a data-toggle="pill" href="#SOCIAL">SOCIAL</a></li>
 					<li><a data-toggle="pill" href="#GK">GK</a></li>
 				</ul>
-  		
-
-			<div class="tab-content">
-			<div id="MATHS" class="tab-pane fade in active">
-			    <h4>TEST !!</h4>
-			    <p><a>click here to know the instructions!</a></p>
+  				</nav>
+			<div class="col-xs-10 tab-content well">
+			<div id="INSTRUCTIONS" class="tab-pane fade in active">
+												<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+														<span class="glyphicon glyphicon-eye-open"></span> Read Instructions</button>
+								  				<div class="modal fade " id="myModal" role="dialog">
+								    				<div class="modal-dialog">    
+								         				<div class="modal-content">
+								        						<div class="modal-header">
+								          							<button type="button" class="close" data-dismiss="modal">&times;</button>
+								          							<h4 class="modal-title">Read Carefully!</h4>
+								        						</div>
+								        						<div class="modal-body">
+								        								<div class="container">
+								          							<p>The following quiz consists of 5 questions.</p>
+															          <ol>
+																	          <li> This is intended to test your General Knowledge.</li>
+															          		<li> Questions can be navigated either using tabs or buttons provided.</li>
+															          		<li> For each right answer 20 marks is awarded.</li>
+															          		<li> There is no negative marking.</li>																	          
+																	          <li> The total score obtained out of 100 will be displayed after submitting the quiz.</li>
+																	          <li> The answers will get saved only on clicking SAVE button.</li>
+															          </ol></div>
+															          <h5> Have fun time!</h5>
+															      </div>
+								        						<div class="modal-footer">
+								          							<button type="button" class="btn-success btn-lg" data-dismiss="modal">
+								          									<span class="glyphicon glyphicon-time"></span> Take TEST</button>
+								        						</div>
+								      					</div>
+								      			</div>
+								      	</div>
+								    </div>  
+			<div id="MATHS" class="tab-pane fade">
+			     
+			     <p id="m-timer"></p>
 			    <ul class="nav nav-tabs maths">
 					<li class="active"><a data-toggle="tab" href="#M1">Q1</a></li>
 				    <li><a data-toggle="tab" href="#M2">Q2</a></li>
@@ -126,14 +157,17 @@
 				</ul>
 
 	  			<div class="tab-content">
+				<div class="col-md-6 pull-right" id="mscore_box"></div>
 				<div id="M1" class="tab-pane fade in active">
 				      	<h3>Q1</h3>
 				      	<p>1. I am an odd number. Take away one letter and I become even. What number am I?  - </p>
 	   					<input type="text" id="firstquestion" name="M1" placeholder="Enter your answer"/></br>
+						<br>
 						<div class="quizmessage-f"></div>
+					
 						<button type="button"  class="btn btn-primary save-maf">save</button>
 						<button type="button"  class="btn btn-primary btnNext-maths" >Next</button>
-						
+				
 				    </div>
 				    <div id="M2" class="tab-pane fade">
 					    <h3>Q2</h3>
@@ -141,7 +175,8 @@
 						<input type="radio" class="secondquestion" name="M2" value="1"> 52 <br>
 						<input type="radio" class="secondquestion" name="M2" value="2"> 70 <br>
 						<input type="radio" class="secondquestion" name="M2" value="3"> 48 <br>
-						<input type="radio" class="secondquestion" name="M2" value="4"> 68<br>
+						<input type="radio" class="secondquestion" name="M2" value="4" class="space"> 68<br>
+						
 						<div class="quizmessage-s"></div>
 						<button type="button"  class="btn btn-primary save-mas">save</button>
 						<button type="button"  class="btn btn-primary btnNext-maths-mas" >Next</button>
@@ -169,25 +204,22 @@
 				    	<h3>Q5</h3>
 				    	<p>5. The Green color in crackers is due to </p> 
 						<select id ="fifthquestion">
-							<option>Barium plus a Chlorine producer</option>
-							<option>Strontium plus Copper</option>
-							<option>Strongtium and Lithium</option>
-							<option>Aluminium or Magnesium powder</option>                               
+							<option value="1">Barium plus a Chlorine producer</option>
+							<option value="2">Strontium plus Copper</option>
+							<option value="3">Strongtium and Lithium</option>
+							<option value="4">Aluminium or Magnesium powder</option>                               
 						</select>
 						<div class="quizmessage-ff"></div>
 						<button type="button" class="btn btn-primary save-maff">save</button>
-						<button type="button" class="btn btn-primary submit-maff">submit</button>
-						
+						<button type="button" class="btn btn-primary submit-maff">submit quiz</button>
+						<br>
 				    </div>
+					
 				</div>
-				<ul class="pager">
-					<a class="btn btn-primary btnPrevious-mq" >previous</a>
-					<a class="btn btn-primary btnNext-mq" >Next</a>
-				</ul>
+
 		    </div>
 			<div id="SCIENCE" class="tab-pane fade">
-			    <h4>TEST !!</h4>
-			    <p><a>click here to know the instructions!</a></p>
+			      <p id="sc-timer"></p>
 			    <ul class="nav nav-tabs science">
 					<li class="active"><a data-toggle="tab" href="#SC1">Q1</a></li>
 				    <li><a data-toggle="tab" href="#SC2">Q2</a></li>
@@ -197,49 +229,68 @@
 				</ul>
 
 	  			<div class="tab-content">
+				<div class="col-md-6 pull-right" id="scscore_box"></div>
 				    <div id="SC1" class="tab-pane fade in active">
 				      	<h3>Q1</h3>
 				      	<p>1. The only letter that doesn't appear on the periodic table is - </p>
-	   					<input type="text" name="SC1" placeholder="Enter your answer"/>
+	   					<input type="text" name="SC1" id="firstquestion-sc" placeholder="Enter your answer"/>
+						<br>
+	   					<div class="quizmessage-sf"></div>
+						<button type="button"  class="btn btn-primary save-masf">save</button>
+						<button type="button"  class="btn btn-primary btnNext-science" >Next</button>
 				    </div>
 				    <div id="SC2" class="tab-pane fade">
 					    <h3>Q2</h3>
 					    <p>2. What is the chemical formula for "banana"?</p> 
-						<input type="radio" name="SC2" value="1"> BaNa<sub>2</sub> <br>
-						<input type="radio" name="SC2" value="2"> BaNa <br>
-						<input type="radio" name="SC2" value="3"> Ba<sub>2</sub>Na <br>
-						<input type="radio" name="SC2" value="4"> Ba<sub>2</sub>Na<sub>2</sub>
+						<input type="radio" name="SC2" class="secondquestion-sc" value="1"> BaNa<sub>2</sub> <br>
+						<input type="radio" name="SC2" class="secondquestion-sc" value="2"> BaNa <br>
+						<input type="radio" name="SC2" class="secondquestion-sc" value="3"> Ba<sub>2</sub>Na <br>
+						<input type="radio" name="SC2" class="secondquestion-sc" value="4"> Ba<sub>2</sub>Na<sub>2</sub>
+						<br>
+						<div class="quizmessage-sc2"></div>
+						<button type="button"  class="btn btn-primary save-mas2">save</button>
+						<button type="button"  class="btn btn-primary btnNext-science-mas" >Next</button>
 				    </div>
 				    <div id="SC3" class="tab-pane fade">
 				        <h3>Q3</h3>
 				        <p>3. The non-silvery metal(s)</p> 
-						<input type="checkbox" name="SC3" value="1"> Au <br>
-						<input type="checkbox" name="SC3" value="2"> Cu 
-				    </diV>
+						<input type="checkbox" name="SC3" class="thirdquestion-sc" value="1"> Au <br>
+						<input type="checkbox" name="SC3" class="thirdquestion-sc" value="2"> Cu <br>
+						
+						<div class="quizmessage-sc3"></div>
+						<button type="button" class="btn btn-primary save-mas3">save</button>
+						<button type="button"  class="btn btn-primary btnNext-science-mat" >Next</button>
+				    </div>
 				    <div id="SC4" class="tab-pane fade">
 				    	<h3>Q4</h3>
 				    	<p>4. H<sub>2</sub>O is water and H<sub>2</sub>O<sub>2</sub> is hydrogen peroxide. What is H<sub>2</sub>O<sub>4</sub>?</p> 
-						<input type="text" name="SC4" placeholder="Enter your answer"/>
+						<input type="text" name="SC4" class="fourthquestion-sc" placeholder="Enter your answer"/>
+						<br>
+						<div class="quizmessage-sc4"></div>
+						<button type="button"  class="btn btn-primary save-mas4">save</button>
+						<button type="button"  class="btn btn-primary btnNext-science-sc4" >Next</button>
 				    </div>
 				    <div id="SC5" class="tab-pane fade">
 				    	<h3>Q5</h3>
 				    	<p>5. The Green color in crackers is due to </p> 
-						<select class="answers" id ="SC5">
-							<option value="1">Barium plus a Chlorine producer</option>
-							<option value="2">Strontium plus Copper</option>
+						<select class="answers" id="fifthquestion-sc">
+							<option value="1">Barium</option>
+							<option value="2">Strontium</option>
 							<option value="3">Strongtium and Lithium</option>
 							<option value="4">Aluminium or Magnesium powder</option>                               
 						</select>
+						<br>
+						<div class="quizmessage-sc5"></div>
+						<button type="button" class="btn btn-primary save-mas5">save</button>
+						<button type="button" class="btn btn-primary submit-mas5">submit</button>
+						<br>
+						
+						
 				    </div>
 				</div>
-				<ul class="pager">
-					<a class="btn btn-primary btnPrevious-mq" >previous</a>
-					<a class="btn btn-primary btnNext-mq" >Next</a>
-				</ul>
 		    </div>
 		    <div id="SOCIAL" class="tab-pane fade">
-			    <h4>TEST !!</h4>
-			    <p><a>click here to know the instructions!</a></p>
+			      <p id="s-timer"></p>
 			    <ul class="nav nav-tabs social">
 					<li class="active"><a data-toggle="tab" href="#S1">Q1</a></li>
 				    <li><a data-toggle="tab" href="#S2">Q2</a></li>
@@ -249,33 +300,49 @@
 				</ul>
 
 	  			<div class="tab-content">
+								<div class="col-md-6 pull-right" id="sscore_box"></div>
 				    <div id="S1" class="tab-pane fade in active">
 				      	<h3>Q1</h3>
 				      	<p>1. Social Sciences study - </p>
-	   					<input type="text" name="S1" placeholder="Enter your answer"/>
+	   					<input type="text" name="S1" id="firstquestion-s1" placeholder="Enter your answer"/>
+						<br>
+						<div class="quizmessage-s1"></div>
+						<button type="button"  class="btn btn-primary save-s1">save</button>
+						<button type="button"  class="btn btn-primary btnNext-s1" >Next</button>
 				    </div>
 				    <div id="S2" class="tab-pane fade">
 					    <h3>Q2</h3>
 					    <p>2. Who took charge as Prime Minister at the death of Jawaharlal Nehru?</p> 
-						<input type="radio" name="S2" value="1"> Gulzarilal Nanda <br>
-						<input type="radio" name="S2" value="2"> Morarji Desai <br>
-						<input type="radio" name="S2" value="3"> Lal Bahadur Shastri <br>
-						<input type="radio" name="S2" value="4"> Indira Gandhi
+						<input type="radio" name="S2" class="secondquestion-s2" value="1"> Gulzarilal Nanda <br>
+						<input type="radio" name="S2" class="secondquestion-s2" value="2"> Morarji Desai <br>
+						<input type="radio" name="S2" class="secondquestion-s2"  value="3"> Lal Bahadur Shastri <br>
+						<input type="radio" name="S2" class="secondquestion-s2"  value="4"> Indira Gandhi<br>
+						<div class="quizmessage-s2"></div>
+						<button type="button"  class="btn btn-primary save-s2">save</button>
+						<button type="button"  class="btn btn-primary btnNext-s2" >Next</button>
+						
 				    </div>
 				    <div id="S3" class="tab-pane fade">
 				        <h3>Q3</h3>
 				        <p>3. When does history begin?</p> 
-						<input type="checkbox" name="S3" value="1"> when human civilization begins <br>
-						<input type="checkbox" name="S3" value="2"> when human memory begins <br>
-						<input type="checkbox" name="S3" value="3"> when written sources become available
+						<input type="checkbox" class="thirdquestion-s3" name="S3" value="1"> when human civilization begins <br>
+						<input type="checkbox" class="thirdquestion-s3" name="S3" value="2"> when human memory begins <br>
+						<input type="checkbox" class="thirdquestion-s3" name="S3" value="3"> when written sources become available<br>
+						<div class="quizmessage-s3"></div>
+						<button type="button"  class="btn btn-primary save-s3">save</button>
+						<button type="button"  class="btn btn-primary btnNext-s3" >Next</button>
 				    </diV>
 				    <div id="S4" class="tab-pane fade">
 				    	<h3>Q4</h3>
 				    	<p>4. Making a living is–</p> 
-						<input type="radio" name="S4" value="1"> A right given to us by the government <br>
-						<input type="radio" name="S4" value="2"> A divine right <br>
-						<input type="radio" name="S4" value="3"> A right given to us by the courts <br>
-						<input type="radio" name="S4" value="4"> A fundamental right
+						<input type="radio" class="fourthquestion-s4" name="S4" value="1"> A right given to us by the government <br>
+						<input type="radio" class="fourthquestion-s4" name="S4" value="2"> A divine right <br>
+						<input type="radio" class="fourthquestion-s4" name="S4" value="3"> A right given to us by the courts <br>
+						<input type="radio" class="fourthquestion-s4" name="S4" value="4"> A fundamental right<br>
+						<div class="quizmessage-s4"></div>
+						<button type="button"  class="btn btn-primary save-s4">save</button>
+						<button type="button"  class="btn btn-primary btnNext-s4" >Next</button>
+						
 				    </div>
 				    <div id="S5" class="tab-pane fade">
 				    	<h3>Q5</h3>
@@ -286,12 +353,17 @@
 							<option value="3">3.4%</option>
 							<option value="4">2.4%</option>                               
 						</select>
+						<br>
+						<div class="quizmessage-s5"></div>
+						<button type="button" class="btn btn-primary save-s5">save</button>
+						<button type="button" class="btn btn-primary submit-s5">submit</button>
+						<br>
 				    </div>
 				</div>
+				
 		    </div>
 		    <div id="GK" class="tab-pane fade">
-			    <h4>TEST !!</h4>
-			    <p><a>click here to know the instructions!</a></p>
+			      
 			    <ul class="nav nav-tabs general">
 					<li class="active"><a data-toggle="tab" href="#G1">Q1</a></li>
 				    <li><a data-toggle="tab" href="#G2">Q2</a></li>
@@ -301,6 +373,7 @@
 				</ul>
 
 	  			<div class="tab-content">
+				<div class="col-md-6 pull-right" id="sscore_box"></div>
 				    <div id="G1" class="tab-pane fade in active">
 				      	<h3>Q1</h3>
 				      	<p>1. The capital of INDIA is</p>
@@ -338,18 +411,10 @@
 						</select>
 				    </div>
 				</div>
-					<ul class="pager">
-					<a class="btn btn-primary btnPrevious-gk" >previous</a>
-					<a class="btn btn-primary btnNextg-gk" >Next</a>
-					</ul>
 				
 		    </div>
 		</div>
 	</div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">SUBMIT</button>
-            <button type="reset" class="btn btn-default">RESET</button>
-          </div>
       </form>
     </div>
   </div>
