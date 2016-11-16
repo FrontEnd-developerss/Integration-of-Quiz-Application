@@ -1,5 +1,44 @@
 $(document).ready(function() {
 	$('[data-toggle="tooltip"]').tooltip(); 
+	if(localStorage["username"]!=null){
+		
+			var user_name = localStorage["username"];
+				document.getElementById("s_name").value = user_name;
+		}
+		if(localStorage["password"]!=null){
+		
+			var user_name = localStorage["password"];
+				document.getElementById("password").value = user_name;
+		}
+		if(localStorage["age"]!=null){
+		
+			var user_name = localStorage["age"];
+				document.getElementById("s_age").value = user_name;
+		}
+		if(localStorage["mail"]!=null){
+		
+			var user_name = localStorage["mail"];
+				document.getElementById("s_mailid").value = user_name;
+		}
+		if(localStorage["new_subject"]!=null){
+			if(localStorage["role"]==="admin"){
+				var sel_subject = localStorage["new_subject"];
+				$(".interested").text(sel_subject);
+				$(".toggle_subject").css("display","block");
+			}
+			else {
+				$(".toggle_subject").css("display","none");
+			}
+			if(localStorage["role"]==="student") {
+				var sel_subject = localStorage["new_subject"];
+				$(".interested_student").text(sel_subject);
+				$(".toggle_subject_student").css("display","block");
+			}
+			else{
+				$(".toggle_subject_student").css("display","none");
+			}
+			
+		}
 	var subject="";
 	var sessionvar = localStorage["username"];
 	    $("#session").text("Welcome "+sessionvar+",");
@@ -21,6 +60,20 @@ $(document).ready(function() {
 	    		}
 	    	}
 	    };
+	 $("#edit").click(function(){
+	 	event.preventDefault();
+	 	$("#s_name").prop("disabled",false);
+	 	$("#password").prop("disabled",false);
+	 });
+	  $("#updateProfile").click(function(){
+	 	event.preventDefault();
+	 	
+	 	$("#s_name").prop("disabled",true);
+	 	$("#password").prop("disabled",true);
+	 	alert("Profile details updated successfully");
+
+	 	// return false;
+	 });
 	$("#show").click(function(){
 		if(localStorage["new_subject"]!=null){
 			if(localStorage["role"]==="admin"){
@@ -87,6 +140,7 @@ $(document).ready(function() {
 	});
 	$("#admin_submit").click(function() {
 					event.preventDefault();
+					alert("Registered Successfully");
 					window.location="practise.html";
 	});
 	$("form").keyup(function () {

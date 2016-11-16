@@ -29,6 +29,10 @@ li {
 	float:left;
 	margin-left: 20px;
 }
+.content {
+	float:left;
+	margin-left: 20px;
+}
 #start {
 	color:white;
 	background-color: darkblue;

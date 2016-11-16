@@ -1,8 +1,17 @@
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 80%;
-      margin: auto;
+      width: 70%;
   }
+.come
+{
+float:left;
+}
+#welcome
+{  
+    width: 286px;
+  
+
+}
 
 body {overflow-x: hidden;}
 .no-container {
@@ -15,7 +24,7 @@ body {overflow-x: hidden;}
 }
   .space
   {
-  padding-bottom:40px;
+  padding-bottom:60px;
   }
   #preloader  {
 
