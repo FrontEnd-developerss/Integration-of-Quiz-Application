@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 #submit_form {
 	margin-right: 10px;
 	margin-bottom: 30px;
@@ -11,8 +12,15 @@
 	color:red;
 	display:none;
 }
-li {
-	text-align: center;
+.jumbotron {
+	margin:0px;
+	padding:0px;
+}
+.jumbotron h2 {
+	font-size: 35px;
+	color:white;
+	padding: 0px;
+	font-family: 'Ubuntu', sans-serif;
 }
 #valid1 {
 	color:red;
@@ -21,25 +29,44 @@ li {
 #sign_out,#session {
 	display: inline;
 	font-size: large;
+
+}
+#session_full {
+		text-align: right;
+}
+#sign_out {
+	color:yellow;
 }
 #navigation {
 	float:left;
 }
+#success {
+	display:none;
+}
 #content {
+	float:left;
+	margin-left: 70px;
+}
+.content {
 	float:left;
 	margin-left: 20px;
 }
 #start {
 	color:white;
-	background-color: darkblue;
+	background-color: transparent;
 }
 #contain {
 	background-color: white;
+
 	box-shadow: 0 0 20px 5px black;
 }
+.navbar-brand {
+	font-style:italic;
+}
 body {
-	background-color: lightgrey;
 	font-family: 'Righteous', cursive;
+	background-image: url("../images/download.jpg");
+	background-size: cover;
 }
 a {
 	color:black;
@@ -64,4 +91,8 @@ a {
 }
 .toggle_subject_student {
 	display:none;
+}
+.mycontainer {
+	padding-top:30px;
+	padding-bottom:30px;
 }

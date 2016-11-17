@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -10,6 +10,7 @@
   <script type="text/javascript" src="js/zebra_datepicker.js"></script>
   <link rel="stylesheet" href="css/bootstrap_zebra.css">
 		<link rel="stylesheet" href="css/login.css">
+		<link rel="stylesheet" href="css/custom.css">
 		<script src="js/myjquery_main.js"></script>
     <script src="js/jquery_reg.js"></script>
     <script src="js/quizjs.js"></script>
@@ -17,83 +18,186 @@
 	</head>
 	<body id="populate">
 		<div class="jumbotron text-center" id="start">
-			<h1>Welcome to Quiz Portal</h1>
+			<h2>Quiz Portal</h2>
+			
 		</div>
-		<div class="container" id="contain">
-    <div class="container text-right">
-      <h3 id="session"></h3>&emsp;<a href="practise.html" id="sign_out" data-toggle="tooltip" title="Exit Quiz"> Sign out</a>
+		<nav class="navbar navbar-inverse navbar-full">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+			<div class="container-fluid">
+				<div class="navbar-header">
+								<div class="navbar-brand">
+								 QUIZ
+								</div>
+							</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+
+						  <ul class="nav navbar-nav navbar-left" id="navigation">
+						  	
+						  <li class="active" ><a data-toggle="tab" href="#welcome" class="btn"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+						    <li><a data-toggle="tab" href="#home" class="btn" id="view"> <span class="glyphicon glyphicon-file"></span> Profile </a></li>
+						    <li><a data-toggle="tab" href="#menu1" class="btn" id="update"><span class="glyphicon glyphicon-user"></span> Admin</a></li>
+						    <li ><a data-toggle="tab" href="#menu2" class="btn" id="show"><span class="glyphicon glyphicon-question-sign"></span> Quiz Page</a></li>
+						  </ul>
+						  	<ul class="nav navbar-nav navbar-right">
+					        <li><a href="#"></a></li>
+					        <li><a href="#"></a></li>
+					      </ul>
+						<div class="nav navbar-nav navbar-right">
+							<div class="navbar-brand" id="session_full">
+					     		 <h3 id="session"></h3>&emsp;<a href="practise.html" id="sign_out" data-toggle="tooltip" title="Exit Quiz"><span class="glyphicon glyphicon-off"></span> Sign out</a>
+					      		</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		 </nav>
+  
+	<div class="row" id="contain">
+    		
+		
+  <div class="col-xs-12 mycontainer" >
+  <div class="tab-content container" id="content">
+   <div id="welcome" class="tab-pane fade  in active">
+   <div id="myCarousel" class="carousel slide col-xs-12" data-ride="carousel">
+    <!-- Indicators -->
+	 
+  <br>
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <img src="images/pic09.jpg" alt="Chania" width="460" height="45">
+        <div class="carousel-caption">
+          <h3>Chania</h3>
+          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+        </div>
       </div>
-  <ul class="nav nav-pills nav-stacked" id="navigation">
-    <li class="active" ><a data-toggle="tab" href="#home" class="btn">Profile Info</a></li>
-    <li><a data-toggle="tab" href="#menu1" class="btn" id="update">Admin Quiz Page</a></li>
-    <li ><a data-toggle="tab" href="#menu2" class="btn" id="show">Quiz Page</a></li>
-  </ul>
 
-  <div class="tab-content" id="content">
-    <div id="home" class="tab-pane fade in active">
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="view">View Profile</button>
-      <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
+      <div class="item">
+        <img src="images/pic10.jpg" alt="Chania" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Chania</h3>
+          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+        </div>
+      </div>
     
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Profile:</h4> <span class="help-block">
-             If you want to edit your profile details just change below, it will be updated.</span>
+      <div class="item">
+        <img src="images/pic11.gif" alt="Flower" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Flowers</h3>
+          <p>Beatiful flowers in Kolymbari, Crete.</p>
         </div>
-        <div class="modal-body">
-          <form name="profile_form">
+      </div>
 
-          <div class="form-group" id="reg_name">
-            <label for="name">Name:</label>
-            <input id="s_name" type="text" class="form-control" placeholder="Enter your name" data-toggle="tooltip" title="Enter your name"><p id="valid"></p>
-          </div>
-          <div class="form-group" id="password_div">
-                <label for="password">Password:</label>
-              <input type="password" class="form-control" id="password" data-toggle="tooltip" title="enter your password" placeholder="Enter your password" contenteditable="true"><p id="pass_valid">Invalid password</p>
-          </div>
-          <div class="form-group">
-            <label for="age">Age (in years):</label>
-            <input id="s_age" class="form-control" disabled>
-          </div>
-          <div class="form-group toggle_subject"><label for="subject">Subjects Handling:</label><span class="interested"></span>
-          </div>
-          <div class="form-group toggle_subject_student" ><label for="subject">Interested Subjects:</label><span class="interested_student"></span>
-          </div>
-          <div class="form-group" id="reg_mailid">
-            <label for="mailid">Email ID:</label>
-            <input id="s_mailid" type="email" class="form-control" placeholder="someone@gmail.com" data-toggle="tooltip" title="Enter your mail ID" disabled><p id="valid1"></p>
-          </div>      
-          
+      <div class="item">
+        <img src="images/pic12.jpg" alt="Flower" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Flowers</h3>
+          <p>Beatiful flowers in Kolymbari, Crete.</p>
         </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-         </div>
-       </div>
-      
-        </div>
-       </div>
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+    <div id="home" class="tab-pane fade">
+    	<!--  <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+	          
+	         
+
+      <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="view">View Profile</button> -->
+
+	          <form name="profile_form" class="form-horizontal">
+	          	 
+	         
+	          <div class="form-group" id="reg_name">
+	            <label for="name" class="col-xs-4 control-label"><h4 class="modal-title"><span class="glyphicon glyphicon-file"></span> Profile </h4></label>
+	            
+	          </div>
+	          <div class="form-group" id="reg_name">
+	            <label for="name" class="col-xs-3 control-label">Name:</label>
+	            	<div class="col-xs-9">
+	            	<input id="s_name" type="text" class="form-control" placeholder="Enter your name" data-toggle="tooltip" title="Enter your name" disabled=""><p id="valid"></p>
+	            	</div>
+	          </div>
+	          <div class="form-group" id="password_div">
+	                <label for="password" class="col-xs-3 control-label">Password:</label>
+	               		 <div class="col-xs-9">
+			              <input type="password" class="form-control" id="password" data-toggle="tooltip" title="enter your password" placeholder="Enter your password" disabled><p id="pass_valid">Invalid password</p>
+			              </div>
+	          </div>
+	          <div class="form-group">
+	            <label for="age" class="col-xs-3 control-label">Age (in years):</label>
+	            	<div class="col-xs-9">
+	            	<input id="s_age" class="form-control" disabled>
+	            	</div>
+	          </div>
+	          <div class="form-group toggle_subject"><label for="subject" class="col-xs-3 control-label">Subjects Handling:</label>
+	          <div class="col-xs-9"><span class="interested"></span></div>
+	          </div>
+	          <div class="form-group toggle_subject_student" ><label for="subject" class="col-xs-3 control-label">Interested Subjects:</label><div class="col-xs-9"><span class="interested_student"></span></div>
+	          </div>
+	          <div class="form-group" id="reg_mailid">
+	          <label for="mailid" class="col-xs-3 control-label"> <span class="glyphicon glyphicon-envelope"></span> Email ID:</label>
+	            	<div class="col-xs-9">
+	          		  <input id="s_mailid" type="email" class="form-control" placeholder="someone@gmail.com" data-toggle="tooltip" title="Enter your mail ID" disabled><p id="valid1"></p>
+	          		 </div>
+	          </div>
+	          <div class="form-group">
+	          	<div class="col-xs-10 container text-center">
+	          		<button class="btn btn-warning " id="edit">Edit Profile</button>
+	          		<button class="btn btn-success " id="updateProfile">Update</button>
+	          	</div>
+	          </div> 
+	         </form>   
+
     </div>
     <div id="menu1" class="tab-pane fade">
        <h3>Update Quiz</h3>
-       <form>
+       <form class="form-horizontal">
         
-         <div class="form-group"><label for="subject">List of Subjects:</label>
+         <div class="form-group"><label for="subject" class="col-sm-2 control-label">List of Subjects:</label>
+         <div class="col-sm-10">
         <select class="form-control appendlist" id="admin_select"> <option value="Maths">Maths</option> <option value="Science">Science
         </option> <option value="Social">Social</option> <option value="General Knowledge">General Knowledge</option> </select>
+        </div>
           </div>
           <div class="form-group">
-            <label for="update">Add Subjects to Quiz:</label>
+            <label for="update" class="col-sm-2 control-label">Add Subjects to Quiz:</label>
+            <div class="col-sm-10">
             <input type="text" class="form-control" id="new_subject" placeholder="enter name of subject to add">
+            </div>
           </div>
           <div class="form-group">
+          	<div class="col-sm-12 text-center"><br/>
             <button type="submit" class="btn btn-primary" id="admin_quiz_submit">SUBMIT</button>
             <button type="reset" class="btn btn-default">RESET</button>
+            </div>
           </div>
       </form>
     </div>
-    <div id="menu2" class="tab-pane fade" >
+    <div id="menu2" class="tab-pane fade" class="content">
       <h3>Attend Quiz</h3>
        <form>
          <div class="form-group toggle_subject"><label for="subject">Subjects Handling:</label><span class="interested"></span>
@@ -101,22 +205,52 @@
           <div class="form-group toggle_subject_student"><label for="subject">Interested Subjects:</label><span class="interested_student"></span>
           </div>
           	<div class="container">
-				<center>
-					<h2>QUESTION CORNER</h2>
-				</center>
-				<p id="demo">10</p>
-				<ul class="nav nav-pills mainquiz">
-					<li class="active"><a data-toggle="pill" href="#MATHS">MATHS</a></li>
-					<li><a data-toggle="pill" href="#SCIENCE">SCIENCE</a></li>
-					<li><a data-toggle="pill" href="#SOCIAL">SOCIAL</a></li>
-					<li><a data-toggle="pill" href="#GK">GK</a></li>
+				
+				<nav class="nav navbar">
+				<ul class="nav nav-pills mainquiz col-xs-10">
+					<li  class="active"><a data-toggle="pill" href="#INSTRUCTIONS" class="btn"><span class="glyphicon glyphicon-th-list"></span></a></li>
+					<li id="math-timer"><a data-toggle="pill" href="#MATHS" class="btn">MATHS</a></li>
+					<li id="science-timer"><a data-toggle="pill" href="#SCIENCE" class="btn">SCIENCE</a></li>
+					<li id="social-timer"><a data-toggle="pill" href="#SOCIAL" class=" btn">SOCIAL</a></li>
+					<!-- <li><a data-toggle="pill" href="#GK">GK</a></li> -->
 				</ul>
-  		
-
-			<div class="tab-content">
-			<div id="MATHS" class="tab-pane fade in active">
-			    <h4>TEST !!</h4>
-			    <p><a>click here to know the instructions!</a></p>
+  				</nav>
+			<div class="col-xs-8 tab-content well">
+			<div id="INSTRUCTIONS" class="tab-pane fade in active">
+												<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+														<span class="glyphicon glyphicon-eye-open"></span> Read Instructions</button>
+								  				<div class="modal fade " id="myModal" role="dialog">
+								    				<div class="modal-dialog">    
+								         				<div class="modal-content">
+								        						<div class="modal-header">
+								          							<button type="button" class="close" data-dismiss="modal">&times;</button>
+								          							<h4 class="modal-title">Read Carefully!</h4>
+								        						</div>
+								        						<div class="modal-body">
+								        								
+								          							<p>The following quiz consists of 5 questions.</p>
+															          <ol>
+																	          <li> This is intended to test your General Knowledge.</li>
+															          		<li> Questions can be navigated either using tabs or buttons provided.</li>
+															          		<li> For each right answer 20 marks is awarded.</li>
+															          		<li> There is no negative marking.</li>																	          
+																	          <li> The total score obtained out of 100 will be displayed after submitting the quiz.</li>
+																	          <li> The answers will get saved only on clicking SAVE button.</li>
+															          </ol>
+															          <h5> Have fun time!</h5>
+															      </div>
+								        						<div class="modal-footer">
+								          							<button type="button" class="btn-success btn-lg" data-dismiss="modal">
+								          									<span class="glyphicon glyphicon-time"></span> Take TEST</button>
+								        						</div>
+								      					</div>
+								      			</div>
+								      	</div>
+								    </div>  
+			<div id="MATHS" class="tab-pane fade">
+			     <div class="pull-right">
+			     <span class="glyphicon glyphicon-time"></span> Time Left : <span id="m-timer"></span>
+			     </div>
 			    <ul class="nav nav-tabs maths">
 					<li class="active"><a data-toggle="tab" href="#M1">Q1</a></li>
 				    <li><a data-toggle="tab" href="#M2">Q2</a></li>
@@ -126,14 +260,17 @@
 				</ul>
 
 	  			<div class="tab-content">
+				<div class="mscore_box"></div>
 				<div id="M1" class="tab-pane fade in active">
 				      	<h3>Q1</h3>
 				      	<p>1. I am an odd number. Take away one letter and I become even. What number am I?  - </p>
 	   					<input type="text" id="firstquestion" name="M1" placeholder="Enter your answer"/></br>
-						<div class="quizmessage-f"></div>
+						<br>
+						<div class="quizmessage-f" style="color:red;"></div>
+					
 						<button type="button"  class="btn btn-primary save-maf">save</button>
 						<button type="button"  class="btn btn-primary btnNext-maths" >Next</button>
-						
+				
 				    </div>
 				    <div id="M2" class="tab-pane fade">
 					    <h3>Q2</h3>
@@ -141,8 +278,9 @@
 						<input type="radio" class="secondquestion" name="M2" value="1"> 52 <br>
 						<input type="radio" class="secondquestion" name="M2" value="2"> 70 <br>
 						<input type="radio" class="secondquestion" name="M2" value="3"> 48 <br>
-						<input type="radio" class="secondquestion" name="M2" value="4"> 68<br>
-						<div class="quizmessage-s"></div>
+						<input type="radio" class="secondquestion" name="M2" value="4" class="space"> 68<br>
+						<br>
+						<div class="quizmessage-s" style="color:red;"></div>
 						<button type="button"  class="btn btn-primary save-mas">save</button>
 						<button type="button"  class="btn btn-primary btnNext-maths-mas" >Next</button>
 					</div>
@@ -152,7 +290,8 @@
 						<input type="checkbox" name="M3" class="thirdquestion" value="1"> 1 <br>
 						<input type="checkbox" name="M3" class="thirdquestion" value="2"> 2 <br>
 						<input type="checkbox" name="M3" class="thirdquestion" value="3"> 3 <br>
-						<div class="quizmessage-t"></div>
+						<br>
+						<div class="quizmessage-t" style="color:red;"></div>
 						<button type="button" class="btn btn-primary save-mat1">save</button>
 						<button type="button"  class="btn btn-primary btnNext-maths-mat" >Next</button>	
 				    </diV>
@@ -161,7 +300,8 @@
 				    	<p>4. There are more than 64 squares on a chess board.</p> 
 						<input type="radio" class="fourthquestion" name="M4" value="1"> True <br>
 						<input type="radio" class="fourthquestion" name="M4" value="2"> False <br>
-						<div class="quizmessage-fr"></div>
+						<br>
+						<div class="quizmessage-fr" style="color:red;"></div>
 						<button type="button" class="btn btn-primary save-mafr">save</button>
 						<button type="button"  class="btn btn-primary btnNext-maths-mafr" >Next</bu>	
 				    </div>
@@ -169,25 +309,25 @@
 				    	<h3>Q5</h3>
 				    	<p>5. The Green color in crackers is due to </p> 
 						<select id ="fifthquestion">
-							<option>Barium plus a Chlorine producer</option>
-							<option>Strontium plus Copper</option>
-							<option>Strongtium and Lithium</option>
-							<option>Aluminium or Magnesium powder</option>                               
+							<option value="1">Barium plus a Chlorine producer</option>
+							<option value="2">Strontium plus Copper</option>
+							<option value="3">Strongtium and Lithium</option>
+							<option value="4">Aluminium or Magnesium powder</option>                               
 						</select>
-						<div class="quizmessage-ff"></div>
+						<br>
+						<div class="quizmessage-ff" style="color:red;"></div>
 						<button type="button" class="btn btn-primary save-maff">save</button>
-						<button type="button" class="btn btn-primary submit-maff">submit</button>
-						
+						<button type="button" class="btn btn-primary submit-maff">submit quiz</button>
+						<br>
 				    </div>
+					
 				</div>
-				<ul class="pager">
-					<a class="btn btn-primary btnPrevious-mq" >previous</a>
-					<a class="btn btn-primary btnNext-mq" >Next</a>
-				</ul>
+
 		    </div>
 			<div id="SCIENCE" class="tab-pane fade">
-			    <h4>TEST !!</h4>
-			    <p><a>click here to know the instructions!</a></p>
+			      <div class="pull-right">
+			     <span class="glyphicon glyphicon-time"></span> Time Left : <span id="sc-timer"></span>
+			     </div>
 			    <ul class="nav nav-tabs science">
 					<li class="active"><a data-toggle="tab" href="#SC1">Q1</a></li>
 				    <li><a data-toggle="tab" href="#SC2">Q2</a></li>
@@ -197,49 +337,74 @@
 				</ul>
 
 	  			<div class="tab-content">
+				<div class="col-md-6 pull-right" id="scscore_box"></div>
 				    <div id="SC1" class="tab-pane fade in active">
 				      	<h3>Q1</h3>
 				      	<p>1. The only letter that doesn't appear on the periodic table is - </p>
-	   					<input type="text" name="SC1" placeholder="Enter your answer"/>
+	   					<input type="text" name="SC1" id="firstquestion-sc" placeholder="Enter your answer"/>
+						<br>
+						<br>
+	   					<div class="quizmessage-sf" style="color:red;"></div>
+						<button type="button"  class="btn btn-primary save-masf">save</button>
+						<button type="button"  class="btn btn-primary btnNext-science" >Next</button>
 				    </div>
 				    <div id="SC2" class="tab-pane fade">
 					    <h3>Q2</h3>
 					    <p>2. What is the chemical formula for "banana"?</p> 
-						<input type="radio" name="SC2" value="1"> BaNa<sub>2</sub> <br>
-						<input type="radio" name="SC2" value="2"> BaNa <br>
-						<input type="radio" name="SC2" value="3"> Ba<sub>2</sub>Na <br>
-						<input type="radio" name="SC2" value="4"> Ba<sub>2</sub>Na<sub>2</sub>
+						<input type="radio" name="SC2" class="secondquestion-sc" value="1"> BaNa<sub>2</sub> <br>
+						<input type="radio" name="SC2" class="secondquestion-sc" value="2"> BaNa <br>
+						<input type="radio" name="SC2" class="secondquestion-sc" value="3"> Ba<sub>2</sub>Na <br>
+						<input type="radio" name="SC2" class="secondquestion-sc" value="4"> Ba<sub>2</sub>Na<sub>2</sub>
+						<br>
+						<br>
+						<div class="quizmessage-sc2"style="color:red;"></div>
+						<button type="button"  class="btn btn-primary save-mas2">save</button>
+						<button type="button"  class="btn btn-primary btnNext-science-mas" >Next</button>
 				    </div>
 				    <div id="SC3" class="tab-pane fade">
 				        <h3>Q3</h3>
 				        <p>3. The non-silvery metal(s)</p> 
-						<input type="checkbox" name="SC3" value="1"> Au <br>
-						<input type="checkbox" name="SC3" value="2"> Cu 
-				    </diV>
+						<input type="checkbox" name="SC3" class="thirdquestion-sc" value="1"> Au <br>
+						<input type="checkbox" name="SC3" class="thirdquestion-sc" value="2"> Cu <br>
+						<br>
+						<div class="quizmessage-sc3" style="color:red;"></div>
+						<button type="button" class="btn btn-primary save-mas3">save</button>
+						<button type="button"  class="btn btn-primary btnNext-science-mat" >Next</button>
+				    </div>
 				    <div id="SC4" class="tab-pane fade">
 				    	<h3>Q4</h3>
 				    	<p>4. H<sub>2</sub>O is water and H<sub>2</sub>O<sub>2</sub> is hydrogen peroxide. What is H<sub>2</sub>O<sub>4</sub>?</p> 
-						<input type="text" name="SC4" placeholder="Enter your answer"/>
+						<input type="text" name="SC4" class="fourthquestion-sc" placeholder="Enter your answer"/>
+						<br>
+						<br>
+						<div class="quizmessage-sc4" style="color:red;"></div>
+						<button type="button"  class="btn btn-primary save-mas4">save</button>
+						<button type="button"  class="btn btn-primary btnNext-science-sc4" >Next</button>
 				    </div>
 				    <div id="SC5" class="tab-pane fade">
 				    	<h3>Q5</h3>
 				    	<p>5. The Green color in crackers is due to </p> 
-						<select class="answers" id ="SC5">
-							<option value="1">Barium plus a Chlorine producer</option>
-							<option value="2">Strontium plus Copper</option>
+						<select class="answers" id="fifthquestion-sc">
+							<option value="1">Barium</option>
+							<option value="2">Strontium</option>
 							<option value="3">Strongtium and Lithium</option>
 							<option value="4">Aluminium or Magnesium powder</option>                               
 						</select>
+						<br>
+						<br>
+						<div class="quizmessage-sc5"style="color:red;"></div>
+						<button type="button" class="btn btn-primary save-mas5">save</button>
+						<button type="button" class="btn btn-primary submit-mas5">submit</button>
+						<br>
+						
+						
 				    </div>
 				</div>
-				<ul class="pager">
-					<a class="btn btn-primary btnPrevious-mq" >previous</a>
-					<a class="btn btn-primary btnNext-mq" >Next</a>
-				</ul>
 		    </div>
 		    <div id="SOCIAL" class="tab-pane fade">
-			    <h4>TEST !!</h4>
-			    <p><a>click here to know the instructions!</a></p>
+			      <div class="pull-right">
+			     <span class="glyphicon glyphicon-time"></span> Time Left : <span id="s-timer"></span>
+			     </div>
 			    <ul class="nav nav-tabs social">
 					<li class="active"><a data-toggle="tab" href="#S1">Q1</a></li>
 				    <li><a data-toggle="tab" href="#S2">Q2</a></li>
@@ -249,33 +414,53 @@
 				</ul>
 
 	  			<div class="tab-content">
+								<div class="col-md-6 pull-right" id="sscore_box"></div>
 				    <div id="S1" class="tab-pane fade in active">
 				      	<h3>Q1</h3>
 				      	<p>1. Social Sciences study - </p>
-	   					<input type="text" name="S1" placeholder="Enter your answer"/>
+	   					<input type="text" name="S1" id="firstquestion-s1" placeholder="Enter your answer"/>
+						<br>
+						<br>
+						<div class="quizmessage-s1" style="color:red;"></div>
+						<button type="button"  class="btn btn-primary save-s1">save</button>
+						<button type="button"  class="btn btn-primary btnNext-s1" >Next</button>
 				    </div>
 				    <div id="S2" class="tab-pane fade">
 					    <h3>Q2</h3>
 					    <p>2. Who took charge as Prime Minister at the death of Jawaharlal Nehru?</p> 
-						<input type="radio" name="S2" value="1"> Gulzarilal Nanda <br>
-						<input type="radio" name="S2" value="2"> Morarji Desai <br>
-						<input type="radio" name="S2" value="3"> Lal Bahadur Shastri <br>
-						<input type="radio" name="S2" value="4"> Indira Gandhi
+						<input type="radio" name="S2" class="secondquestion-s2" value="1"> Gulzarilal Nanda <br>
+						<input type="radio" name="S2" class="secondquestion-s2" value="2"> Morarji Desai <br>
+						<input type="radio" name="S2" class="secondquestion-s2"  value="3"> Lal Bahadur Shastri <br>
+						<input type="radio" name="S2" class="secondquestion-s2"  value="4"> Indira Gandhi<br>
+						<br>
+						<div class="quizmessage-s2"style="color:red;"></div>
+						<button type="button"  class="btn btn-primary save-s2">save</button>
+						<button type="button"  class="btn btn-primary btnNext-s2" >Next</button>
+						
 				    </div>
 				    <div id="S3" class="tab-pane fade">
 				        <h3>Q3</h3>
 				        <p>3. When does history begin?</p> 
-						<input type="checkbox" name="S3" value="1"> when human civilization begins <br>
-						<input type="checkbox" name="S3" value="2"> when human memory begins <br>
-						<input type="checkbox" name="S3" value="3"> when written sources become available
+						<input type="checkbox" class="thirdquestion-s3" name="S3" value="1"> when human civilization begins <br>
+						<input type="checkbox" class="thirdquestion-s3" name="S3" value="2"> when human memory begins <br>
+						<input type="checkbox" class="thirdquestion-s3" name="S3" value="3"> when written sources become available<br>
+						<br>
+						<div class="quizmessage-s3" style="color:red;"></div>
+						<button type="button"  class="btn btn-primary save-s3">save</button>
+						<button type="button"  class="btn btn-primary btnNext-s3" >Next</button>
 				    </diV>
 				    <div id="S4" class="tab-pane fade">
 				    	<h3>Q4</h3>
 				    	<p>4. Making a living is–</p> 
-						<input type="radio" name="S4" value="1"> A right given to us by the government <br>
-						<input type="radio" name="S4" value="2"> A divine right <br>
-						<input type="radio" name="S4" value="3"> A right given to us by the courts <br>
-						<input type="radio" name="S4" value="4"> A fundamental right
+						<input type="radio" class="fourthquestion-s4" name="S4" value="1"> A right given to us by the government <br>
+						<input type="radio" class="fourthquestion-s4" name="S4" value="2"> A divine right <br>
+						<input type="radio" class="fourthquestion-s4" name="S4" value="3"> A right given to us by the courts <br>
+						<input type="radio" class="fourthquestion-s4" name="S4" value="4"> A fundamental right<br>
+						<br>
+						<div class="quizmessage-s4"style="color:red;"></div>
+						<button type="button"  class="btn btn-primary save-s4">save</button>
+						<button type="button"  class="btn btn-primary btnNext-s4" >Next</button>
+						
 				    </div>
 				    <div id="S5" class="tab-pane fade">
 				    	<h3>Q5</h3>
@@ -286,73 +471,29 @@
 							<option value="3">3.4%</option>
 							<option value="4">2.4%</option>                               
 						</select>
+						<br>
+						<br>
+						<div class="quizmessage-s5"style="color:red;"></div>
+						<button type="button" class="btn btn-primary save-s5">save</button>
+						<button type="button" class="btn btn-primary submit-s5">submit</button>
+						<br>
 				    </div>
 				</div>
-		    </div>
-		    <div id="GK" class="tab-pane fade">
-			    <h4>TEST !!</h4>
-			    <p><a>click here to know the instructions!</a></p>
-			    <ul class="nav nav-tabs general">
-					<li class="active"><a data-toggle="tab" href="#G1">Q1</a></li>
-				    <li><a data-toggle="tab" href="#G2">Q2</a></li>
-				    <li><a data-toggle="tab" href="#G3">Q3</a></li>
-				    <li><a data-toggle="tab" href="#G4">Q4</a></li>
-				    <li><a data-toggle="tab" href="#G5">Q5</a></li>
-				</ul>
-
-	  			<div class="tab-content">
-				    <div id="G1" class="tab-pane fade in active">
-				      	<h3>Q1</h3>
-				      	<p>1. The capital of INDIA is</p>
-	   						<input type="text" name="G1" placeholder="Enter your answer"/>
-				    </div>
-				    <div id="G2" class="tab-pane fade">
-					    <h3>Q2</h3>
-					    <p>2. Minimum age for voting in INDIA is -</p> 
-						<input type="radio" name="G2" value="1"> 18 <br>
-						<input type="radio" name="G2" value="2"> 21 
-				    </div>
-				    <div id="G3" class="tab-pane fade">
-				        <h3>Q3</h3>
-				        <p>3. Which of the following exists in INDIA ?</p> 
-						<input type="checkbox" name="G3" value="1"> State <br>
-						<input type="checkbox" name="G3" value="2"> Union-territory
-				    </div>
-				    <div id="G4" class="tab-pane fade">
-				    	<h3>Q4</h3>
-				    	<p>4. Indian Independance :</p> 
-						<input type="radio" name="G4" value="1"> 1947 <br>
-						<input type="radio" name="G4" value="2"> Aug 1947 <br>
-						<input type="radio" name="G4" value="3"> 15 Aug 1947 <br>
-						<input type="radio" name="G4" value="4"> Aug 15 1947 <br>
-						<input type="radio" name="G4" value="5"> Last two
-				    </div>
-				    <div id="G5" class="tab-pane fade">
-				    	<h3>Q5</h3>
-				    	<p>5. The Electronic city is -</p> 
-						<select class="answers" id ="G5">
-							<option value="1">Chennai</option>
-							<option value="2">Bengaloru</option>
-							<option value="3">Mumbai</option>
-							<option value="4">Trivandrum</option>                               
-						</select>
-				    </div>
-				</div>
-					<ul class="pager">
-					<a class="btn btn-primary btnPrevious-gk" >previous</a>
-					<a class="btn btn-primary btnNextg-gk" >Next</a>
-					</ul>
 				
 		    </div>
 		</div>
 	</div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">SUBMIT</button>
-            <button type="reset" class="btn btn-default">RESET</button>
-          </div>
       </form>
     </div>
   </div>
+  </div>
 </div>
-	</body>
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
+		<div class="nav navbar-nav navbar-right">
+			<div class="navbar-header">
+			<div class="navbar-brand"><p>Copyright &copy; Quiz Portal &trade; 2016</p></div>
+		</div>
+		</div>
+	</div>	
+</body>
 </html>
