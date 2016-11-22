@@ -1,74 +1,256 @@
-ï»¿<!doctype html>
-<html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <link rel="icon" href="http://example.com/favicon.png">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/zebra_datepicker.js"></script>
   <link rel="stylesheet" href="css/bootstrap_zebra.css">
 		<link rel="stylesheet" href="css/login.css">
 		<link rel="stylesheet" href="css/custom.css">
+		  <link rel="icon" href="http://example.com/favicon.png">
 		<script src="js/myjquery_main.js"></script>
     <script src="js/jquery_reg.js"></script>
     <script src="js/quizjs.js"></script>
-		<title>Login</title>
-	</head>
-	<body id="populate">
-		<div class="jumbotron text-center" id="start">
-			<h2>Quiz Portal</h2>
-			
-		</div>
-		<nav class="navbar navbar-inverse navbar-full">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
+    <script src="js/custom.js"></script>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+<div id="preloader">
+<div id="status">&nbsp;</div>
+
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" data-toggle="tooltip" title="Click to hide Menu">&times;</a>
+  <nav class="navbar navbar-inverse navbar-full">
+					
 			<div class="container-fluid">
 				<div class="navbar-header">
 								<div class="navbar-brand">
-								 QUIZ
+								 Quiz Portal
 								</div>
 							</div>
-					<div class="collapse navbar-collapse" id="myNavbar">
+					
 
 						  <ul class="nav navbar-nav navbar-left" id="navigation">
-						  	
+						  	<p class="datestyle" id="demo"></p>
+							<div class="clock datestyle"></div>
 						  <li class="active" ><a data-toggle="tab" href="#welcome" class="btn"><span class="glyphicon glyphicon-home"></span> Home </a></li>
 						    <li><a data-toggle="tab" href="#home" class="btn" id="view"> <span class="glyphicon glyphicon-file"></span> Profile </a></li>
 						    <li><a data-toggle="tab" href="#menu1" class="btn" id="update"><span class="glyphicon glyphicon-user"></span> Admin</a></li>
 						    <li ><a data-toggle="tab" href="#menu2" class="btn" id="show"><span class="glyphicon glyphicon-question-sign"></span> Quiz Page</a></li>
+							<li> <div class="w3-content w3-section" style="max-width:500px">
+							  <p class="mySlides datestyle">“Live as if you were to die tomorrow. Learn as if you were to live forever.” 
+							? Mahatma Gandhi</p>
+							<p class="mySlides datestyle">“The world is a book and those who do not travel read only one page.” 
+							? Augustine of Hippo</p>
+							<p class="mySlides datestyle">“Education is the most powerful weapon which you can use to change the world.” 
+							? Nelson Mandela</p>
+							<p class="mySlides datestyle">“The task of the modern educator is not to cut down jungles, but to irrigate deserts.” 
+							? C.S. Lewis</p>
+							</div></li>
 						  </ul>
+						  
 						  	<ul class="nav navbar-nav navbar-right">
 					        <li><a href="#"></a></li>
 					        <li><a href="#"></a></li>
 					      </ul>
 						<div class="nav navbar-nav navbar-right">
 							<div class="navbar-brand" id="session_full">
-					     		 <h3 id="session"></h3>&emsp;<a href="practise.html" id="sign_out" data-toggle="tooltip" title="Exit Quiz"><span class="glyphicon glyphicon-off"></span> Sign out</a>
+					     		 
 					      		</div>
 							</div>
-					</div>
+					
 				</div>
 			</div>
 		 </nav>
+</div>
+
+<div id="main">
+	<div class="jumbotron">
+		<h1 class="text-center">Quiz portal</h1>
+	</div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()" data-toggle="tooltip" title="Click to view Menu">&#9776;Menu</span>
+  <div class="pull-right">
+<h3 id="session"></h3>&emsp;<a href="practise.html" id="sign_out" data-toggle="tooltip" data-placement="bottom" title="Exit Quiz"><span class="glyphicon glyphicon-off"></span> Sign out</a>
+</div>
+   <div >
+  <div class="tab-content container">
+   
+   <div id="welcome" class="tab-pane fade  in active">
+<div id="admin">
+   <div id="myCarousel_admin" class="carousel slide col-xs-12" data-ride="carousel">
+    <!-- Indicators -->
+	 
+  <br>
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel_admin" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel_admin" data-slide-to="1"></li>
+      <li data-target="#myCarousel_admin" data-slide-to="2"></li>
+      <li data-target="#myCarousel_admin" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+<a href="#menu1">
+        <img src="images/pic01.png" alt="Chania" width="460" height="45"></a>
+        <div class="carousel-caption">
+          <h3>Chania</h3>
+          <p>Press to get to the profile page.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/pic02.jpg" alt="Chania" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Chania</h3>
+          <p>Click to get to the home page.</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="images/pic03.jpg" alt="Flower" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Flowers</h3>
+          <p>Click to get to the quiz.</p>
+        </div>
+      </div>
+
+    
   
-	<div class="row" id="contain">
-    		
-		
-  <div class="col-xs-12 mycontainer" >
-  <div class="tab-content container" id="content">
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel_admin" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel_admin" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
+<div id="student">
+ <div id="welcome" class="tab-pane fade  in active">
+   <div id="myCarousel" class="carousel slide col-xs-12" data-ride="carousel">
+    <!-- Indicators -->
+	 
+  <br>
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+<a href="#menu1">
+        <img src="images/pic01.png" alt="Chania" width="460" height="45"></a>
+        <div class="carousel-caption">
+          <h3>Chania</h3>
+          <p>Press to get to the profile page.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/pic02.jpg" alt="Chania" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Chania</h3>
+          <p>Click to get to the home page.</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="images/pic03.jpg" alt="Flower" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Flowers</h3>
+          <p>Click to get to the quiz.</p>
+        </div>
+      </div>
+
+    
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
     <div id="home" class="tab-pane fade">
     	<!--  <button type="button" class="close" data-dismiss="modal">&times;</button> -->
 	          
 	         
 
       <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="view">View Profile</button> -->
-
+      		<div class="container col-lg-6 col-lg-offset-3">
 	          <form name="profile_form" class="form-horizontal">
 	          	 
 	         
@@ -107,46 +289,112 @@
 	          </div>
 	          <div class="form-group">
 	          	<div class="col-xs-10 container text-center">
-	          		<button class="btn btn-warning " id="edit">Edit Profile</button>
-	          		<button class="btn btn-success " id="updateProfile">Update</button>
+	          		<button class="btn btn-warning " id="edit" data-toggle="tooltip" title="Click to edit profile details">Edit Profile</button>&emsp;
+	          		<button class="btn btn-success " id="updateProfile" data-toggle="modal tooltip" data-target="#update_success" title="Click to update profile details" >Update</button>
 	          	</div>
 	          </div> 
-	         </form>   
+	          			<div class="modal fade" id="update_success" role="dialog"><!-- modal -->
+					    <div class="modal-dialog">
+					    
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					      
+					          <h4 class="modal-title"><span class="glyphicon glyphicon-info-sign"></span> Info</h4>
+					        </div>
+					        <div class="modal-body">
+					          <p><span class="glyphicon glyphicon-ok"></span> Profile Details Updated Successfully.</p>
+					        </div>
+					      </div>
+					      
+					    </div>
+					  </div><!-- modal -->
 
+	         </form>   
+	        </div>
     </div>
     <div id="menu1" class="tab-pane fade">
-       <h3>Update Quiz</h3>
-       <form class="form-horizontal">
-        
-         <div class="form-group"><label for="subject" class="col-sm-2 control-label">List of Subjects:</label>
-         <div class="col-sm-10">
+       
+       <div class="container col-lg-6 col-lg-offset-3">
+       <form class="form-horizontal text-left">
+        <h3>Update Quiz</h3>
+         <div class="form-group"><label for="subject" class="col-sm-4 control-label">List of Subjects:</label>
+         <div class="col-sm-8">
         <select class="form-control appendlist" id="admin_select"> <option value="Maths">Maths</option> <option value="Science">Science
         </option> <option value="Social">Social</option> <option value="General Knowledge">General Knowledge</option> </select>
         </div>
           </div>
           <div class="form-group">
-            <label for="update" class="col-sm-2 control-label">Add Subjects to Quiz:</label>
-            <div class="col-sm-10">
-            <input type="text" class="form-control" id="new_subject" placeholder="enter name of subject to add">
+            <label for="update" class="col-sm-4 control-label">Add Subjects to Quiz:</label>
+            <div class="col-sm-8">
+            <input type="text" class="form-control" id="new_subject" placeholder="Enter name of subject to add">
             </div>
           </div>
           <div class="form-group">
           	<div class="col-sm-12 text-center"><br/>
-            <button type="submit" class="btn btn-primary" id="admin_quiz_submit">SUBMIT</button>
-            <button type="reset" class="btn btn-default">RESET</button>
+            <button type="submit" class="btn btn-primary" id="admin_quiz_submit" data-toggle="tooltip" title="Click to add Subject">SUBMIT</button>
+            <button type="reset" class="btn btn-default" data-toggle="tooltip" title="Reset input">RESET</button>
             </div>
           </div>
       </form>
+      </div>
     </div>
     <div id="menu2" class="tab-pane fade" class="content">
+    <div class="container col-lg-6 col-lg-offset-3">
       <h3>Attend Quiz</h3>
-       <form>
+        <form>
          <div class="form-group toggle_subject"><label for="subject">Subjects Handling:</label><span class="interested"></span>
           </div>
           <div class="form-group toggle_subject_student"><label for="subject">Interested Subjects:</label><span class="interested_student"></span>
           </div>
-          	<div class="container">
-				
+
+          	<div class="col-xs-12 container pbar">
+				<div id="myProgress">
+					<div id="myBar">
+						<div id="label">0%</div>
+						</div>
+					</div>
+					
+					<div class="pull-right">
+			     <span class="glyphicon glyphicon-time"></span> Time Left : <span id="m-timer"></span>
+				 </div>
+				 </div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Maths Result</h4>
+      </div>
+      <div class="modal-body" id="mtotal">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+</div>
+  </div>
+  <div id="scModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">science Result</h4>
+      </div>
+      <div class="modal-body" id="sctotal">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+				 
 				<nav class="nav navbar">
 				<ul class="nav nav-pills mainquiz col-xs-10">
 					<li  class="active"><a data-toggle="pill" href="#INSTRUCTIONS" class="btn"><span class="glyphicon glyphicon-th-list"></span></a></li>
@@ -156,7 +404,10 @@
 					<!-- <li><a data-toggle="pill" href="#GK">GK</a></li> -->
 				</ul>
   				</nav>
-			<div class="col-xs-8 tab-content well">
+			<div class="tab-content well">
+			<div class="pull-right">
+				 <span class="glyphicon glyphicon-time"></span> Earned Time  : <span id="e-timer">0s</span>
+				 </div>
 			<div id="INSTRUCTIONS" class="tab-pane fade in active">
 												<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
 														<span class="glyphicon glyphicon-eye-open"></span> Read Instructions</button>
@@ -189,9 +440,7 @@
 								      	</div>
 								    </div>  
 			<div id="MATHS" class="tab-pane fade">
-			     <div class="pull-right">
-			     <span class="glyphicon glyphicon-time"></span> Time Left : <span id="m-timer"></span>
-			     </div>
+				 score : <span id="mscore"> 0 </span>
 			    <ul class="nav nav-tabs maths">
 					<li class="active"><a data-toggle="tab" href="#M1">Q1</a></li>
 				    <li><a data-toggle="tab" href="#M2">Q2</a></li>
@@ -227,7 +476,7 @@
 					</div>
 				    <div id="M3" class="tab-pane fade">
 				        <h3>Q3</h3>
-				        <p>3. Which 3 numbers have the same answer whether theyâ€™re added or multiplied together? </p> 
+				        <p>3. Which 3 numbers have the same answer whether they’re added or multiplied together? </p> 
 						<input type="checkbox" name="M3" class="thirdquestion" value="1"> 1 <br>
 						<input type="checkbox" name="M3" class="thirdquestion" value="2"> 2 <br>
 						<input type="checkbox" name="M3" class="thirdquestion" value="3"> 3 <br>
@@ -256,9 +505,13 @@
 							<option value="4">Aluminium or Magnesium powder</option>                               
 						</select>
 						<br>
+						<br>
 						<div class="quizmessage-ff" style="color:red;"></div>
 						<button type="button" class="btn btn-primary save-maff">save</button>
 						<button type="button" class="btn btn-primary submit-maff">submit quiz</button>
+						<div class="pull-right">
+						<button type="button" class="btn btn-primary" id="mresult-maff" data-toggle="modal" data-target="#myModal">Check Result</button>
+						</div>
 						<br>
 				    </div>
 					
@@ -266,9 +519,7 @@
 
 		    </div>
 			<div id="SCIENCE" class="tab-pane fade">
-			      <div class="pull-right">
-			     <span class="glyphicon glyphicon-time"></span> Time Left : <span id="sc-timer"></span>
-			     </div>
+			      science score : <span id="scscore">0 </span>
 			    <ul class="nav nav-tabs science">
 					<li class="active"><a data-toggle="tab" href="#SC1">Q1</a></li>
 				    <li><a data-toggle="tab" href="#SC2">Q2</a></li>
@@ -336,6 +587,10 @@
 						<div class="quizmessage-sc5"style="color:red;"></div>
 						<button type="button" class="btn btn-primary save-mas5">save</button>
 						<button type="button" class="btn btn-primary submit-mas5">submit</button>
+						<div class="pull-right">
+						<button type="button" class="btn btn-primary" id="scresult-maff" data-toggle="modal" data-target="#scModal">Check Result</button>
+						</div>
+						<br>
 						<br>
 						
 						
@@ -343,6 +598,7 @@
 				</div>
 		    </div>
 		    <div id="SOCIAL" class="tab-pane fade">
+			social score : <span id="sscore">0 </span>
 			      <div class="pull-right">
 			     <span class="glyphicon glyphicon-time"></span> Time Left : <span id="s-timer"></span>
 			     </div>
@@ -392,7 +648,7 @@
 				    </diV>
 				    <div id="S4" class="tab-pane fade">
 				    	<h3>Q4</h3>
-				    	<p>4. Making a living isâ€“</p> 
+				    	<p>4. Making a living is–</p> 
 						<input type="radio" class="fourthquestion-s4" name="S4" value="1"> A right given to us by the government <br>
 						<input type="radio" class="fourthquestion-s4" name="S4" value="2"> A divine right <br>
 						<input type="radio" class="fourthquestion-s4" name="S4" value="3"> A right given to us by the courts <br>
@@ -428,13 +684,24 @@
     </div>
   </div>
   </div>
+  </div>
 </div>
-	<div class="navbar navbar-inverse navbar-fixed-bottom">
-		<div class="nav navbar-nav navbar-right">
-			<div class="navbar-header">
-			<div class="navbar-brand"><p>Copyright &copy; Quiz Portal &trade; 2016</p></div>
-		</div>
-		</div>
-	</div>	
+
+<h4 class="text-center col-xs-12">Copyright &copy; Quiz 2016 &trade;</h4>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+</script>
+     
 </body>
 </html>
+

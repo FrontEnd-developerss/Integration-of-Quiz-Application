@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 		if(localStorage["newval"]!=null) {
 			$(".appendlist").each(function() {
@@ -23,6 +24,7 @@ $(document).ready(function() {
 		$(".appendmultilist").each(function() {
 			$(this).append("<option value="+localStorage["newval"]+">"+localStorage["newval"]+"</option>");
 				});
+		document.getElementById("new_subject").value="";
 		return false;
 	});
 

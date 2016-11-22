@@ -1,5 +1,47 @@
 $(document).ready(function() {
+	
 	$('[data-toggle="tooltip"]').tooltip(); 
+	captchaCode();
+	if(localStorage["username"]!=null){
+		
+			var user_name = localStorage["username"];
+				document.getElementById("s_name").value = user_name;
+		}
+		
+		if(localStorage["password"]!=null){
+		
+			var user_name = localStorage["password"];
+				document.getElementById("password").value = user_name;
+		}
+		if(localStorage["age"]!=null){
+		
+			var user_name = localStorage["age"];
+				document.getElementById("s_age").value = user_name;
+		}
+		if(localStorage["mail"]!=null){
+		
+			var user_name = localStorage["mail"];
+				document.getElementById("s_mailid").value = user_name;
+		}
+		if(localStorage["new_subject"]!=null){
+			if(localStorage["role"]==="admin"){
+				var sel_subject = localStorage["new_subject"];
+				$(".interested").text(sel_subject);
+				$(".toggle_subject").css("display","block");
+			}
+			else {
+				$(".toggle_subject").css("display","none");
+			}
+			if(localStorage["role"]==="student") {
+				var sel_subject = localStorage["new_subject"];
+				$(".interested_student").text(sel_subject);
+				$(".toggle_subject_student").css("display","block");
+			}
+			else{
+				$(".toggle_subject_student").css("display","none");
+			}
+			
+		}
 	var subject="";
 	var sessionvar = localStorage["username"];
 	    $("#session").text("Welcome "+sessionvar+",");
@@ -21,6 +63,24 @@ $(document).ready(function() {
 	    		}
 	    	}
 	    };
+	 $("#edit").click(function(){
+	 	event.preventDefault();
+	 	$("#s_name").prop("disabled",false);
+	 	$("#password").prop("disabled",false);
+	 });
+	  $("#updateProfile").click(function(){
+	 	event.preventDefault();
+	 	
+	 	$("#s_name").prop("disabled",true);
+	 	$("#password").prop("disabled",true);
+	 	//alert("Profile details updated successfully");
+	 	setTimeout(function() {
+  					$("#update_success").modal("show");
+						}, 1000);
+	 	
+
+	 	// return false;
+	 });
 	$("#show").click(function(){
 		if(localStorage["new_subject"]!=null){
 			if(localStorage["role"]==="admin"){
@@ -87,12 +147,17 @@ $(document).ready(function() {
 	});
 	$("#admin_submit").click(function() {
 					event.preventDefault();
-					window.location="practise.html";
+					//alert("Registered Successfully");
+					$("#reg_success").modal("show");
+					setTimeout(function() {
+  					window.location.href = "practise.html";
+						}, 5000);
+					
 	});
 	$("form").keyup(function () {
 		check1();
 		function check1() {
-			if($("#reg_name").hasClass("has-success") && $("#password_div").hasClass("has-success") && $("#reg_dob").hasClass("has-success") && $("#reg_mailid").hasClass("has-success") && $("#role_of_user").hasClass("has-success")) {
+			if($("#reg_name").hasClass("has-success") && $("#password_div").hasClass("has-success") && $("#reg_dob").hasClass("has-success") && $("#reg_mailid").hasClass("has-success") && $("#role_of_user").hasClass("has-success") && $("#reg_captcha").hasClass("has-success")) {
 				$("#admin_submit").prop("disabled",false);
 			}
 			else {
@@ -149,6 +214,30 @@ $(document).ready(function() {
 					$("#password_div").addClass("has-success");
 					localStorage["password"]=$("#password").val();
 				}
+			}
+		});
+		$("#s_captcha").keyup(function() {
+			var captchaVal = Code;
+				var captchaCode = $(".captcha").val();
+				if (captchaCode =="") 
+				{
+					$("#captcha_valid").text("* Please Enter Your Captcha");
+					$("#captcha_valid").css("display","block");
+					$("#reg_captcha").addClass("has-error");
+					$("#reg_captcha").removeClass("has-success");
+				}
+				else if(captchaVal==captchaCode)
+				{
+					$("#captcha_valid").css("display","none");
+					$("#reg_captcha").addClass("has-success");
+					$("#reg_captcha").removeClass("has-error");
+				}
+			
+			else {
+					$("#captcha_valid").css("display","block");
+					$("#captcha_valid").text("Invalid Captcha");
+					$("#reg_captcha").addClass("has-error");
+					$("#reg_captcha").removeClass("has-success");
 			}
 		});
 		$("#s_mailid").keyup(function() {
@@ -256,4 +345,19 @@ $(document).ready(function() {
 			$("#valid").css("display","none");
 			$("#valid1").css("display","none");
 	});
+
 });
+	var Code;
+function captchaCode() 
+		{
+			var Numb1, Numb2, Numb3, Numb4;     
+			Numb1 = (Math.ceil(Math.random() * 10)-1).toString();
+			Numb2 = (Math.ceil(Math.random() * 10)-1).toString();
+			Numb3 = (Math.ceil(Math.random() * 10)-1).toString();
+			Numb4 = (Math.ceil(Math.random() * 10)-1).toString();
+			
+			Code = Numb1 + Numb2 + Numb3 + Numb4;
+			$("#captcha span").remove();
+			$("#captcha input").remove();
+			$("#captcha").append("<span id='code'>" + Code + "</span><input type='button' onclick='captchaCode();'>");
+		};

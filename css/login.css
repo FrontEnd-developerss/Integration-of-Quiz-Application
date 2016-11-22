@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 #submit_form {
 	margin-right: 10px;
 	margin-bottom: 30px;
@@ -11,8 +12,17 @@
 	color:red;
 	display:none;
 }
-li {
-	text-align: center;
+.jumbotron {
+	margin:0px;
+	padding:0px;
+	color:black;
+	background-color: transparent;
+}
+.jumbotron h2 {
+	font-size: 35px;
+	color:white;
+	padding: 0px;
+	font-family: 'Ubuntu', sans-serif;
 }
 #valid1 {
 	color:red;
@@ -21,25 +31,48 @@ li {
 #sign_out,#session {
 	display: inline;
 	font-size: large;
+
+}
+#session {
+	color:black;
+	font-size: x-large;
+}
+#session_full {
+	text-align: right;
+}
+#sign_out {
+	color:yellow;
 }
 #navigation {
 	float:left;
 }
+#success {
+	display:none;
+}
 #content {
+	float:left;
+	margin-left: 70px;
+}
+.content {
 	float:left;
 	margin-left: 20px;
 }
 #start {
 	color:white;
-	background-color: darkblue;
+	background-color: transparent;
 }
 #contain {
 	background-color: white;
 	box-shadow: 0 0 20px 5px black;
 }
+.navbar-brand {
+	font-style:italic;
+}
 body {
-	background-color: lightgrey;
 	font-family: 'Righteous', cursive;
+	background-image: url("../images/check.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 a {
 	color:black;
@@ -63,5 +96,38 @@ a {
 	display:none;
 }
 .toggle_subject_student {
+	display:none;
+}
+.mycontainer {
+	padding-top:30px;
+	padding-bottom:30px;
+}
+.form-horizontal .control-label {
+	text-align: left;
+}
+
+.datestyle {
+	color:#f1f1f1;
+	margin-left:40px;
+	font-size: 15px;
+}
+.mySlides {display:none;
+}
+#captcha span{
+	background-color: white;
+	padding:10px 10px 10px 10px;
+			}
+#captcha input
+{
+	 background: url("../images/Refresh-icon.png");
+	 margin: 5px 0 0 5px;
+	 padding: 0;
+	 border: medium none;
+	 cursor: pointer;
+	 width: 20px;
+	 height: 25px;
+}
+#captcha_valid {
+	color:red;
 	display:none;
 }
